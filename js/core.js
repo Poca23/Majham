@@ -15,6 +15,7 @@ const LEVELS = [
     sc: { cols: 4, colors: 3, stackH: 4 },
     ct: { rows: 4, cols: 4, pairs: 6 },
     bv: { colors: 3, extra: 1 },
+    bs: { rows: 5, colors: 3 },
   },
   {
     name: "Facile",
@@ -23,6 +24,7 @@ const LEVELS = [
     sc: { cols: 5, colors: 4, stackH: 5 },
     ct: { rows: 4, cols: 6, pairs: 8 },
     bv: { colors: 4, extra: 1 },
+    bs: { rows: 6, colors: 4 },
   },
   {
     name: "Moyen",
@@ -31,6 +33,7 @@ const LEVELS = [
     sc: { cols: 5, colors: 5, stackH: 6 },
     ct: { rows: 6, cols: 6, pairs: 10 },
     bv: { colors: 5, extra: 1 },
+    bs: { rows: 7, colors: 5 },
   },
   {
     name: "Difficile",
@@ -39,6 +42,7 @@ const LEVELS = [
     sc: { cols: 6, colors: 6, stackH: 7 },
     ct: { rows: 6, cols: 8, pairs: 14 },
     bv: { colors: 6, extra: 2 },
+    bs: { rows: 8, colors: 6 },
   },
   {
     name: "Expert",
@@ -47,6 +51,7 @@ const LEVELS = [
     sc: { cols: 7, colors: 7, stackH: 8 },
     ct: { rows: 8, cols: 8, pairs: 18 },
     bv: { colors: 7, extra: 2 },
+    bs: { rows: 9, colors: 7 },
   },
 ];
 
@@ -112,6 +117,7 @@ function pickLevel(game) {
     stack: "Stack & Clear",
     chain: "Chain Tiles",
     bottle: "Bottle Sort",
+    bubble: "Bubble Shooter",
   };
   const box = document.createElement("div");
   box.className = "level-screen";
@@ -145,12 +151,14 @@ function startGame(type) {
     stack: "sc-lvl-badge",
     chain: "ct-lvl-badge",
     bottle: "bv-lvl-badge",
+    bubble: "bs-lvl-badge",
   };
   const initMap = {
     tilesmatch: initTileMatch,
     stack: initStack,
     chain: initChain,
     bottle: initBottle,
+    bubble: initBubble,
   };
   updateBadge(badgeMap[type], LEVELS[currentLevel]);
   initMap[type]();

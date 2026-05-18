@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/games.css">
+    <link rel="stylesheet" href="css/bubble-shooter.css">
+
 </head>
 
 <body>
@@ -76,6 +78,18 @@
                     </p>
                 </div>
 
+                <div class="game-card" onclick="pickLevel('bubble')">
+                    <div class="card-top">
+                        <div class="card-emoji">🫧</div>
+                        <div class="card-info">
+                            <h2>Bubble Shooter</h2><span>Éclate les bulles</span>
+                        </div>
+                        <div class="card-badge" style="background:#00b894">Arcade</div>
+                    </div>
+                    <p class="card-desc">Visez et tirez pour éclater les groupes de bulles identiques !</p>
+                </div>
+
+
             </div>
         </div>
 
@@ -131,6 +145,20 @@
             </div>
         </div>
 
+        <!-- BUBBLE SHOOTER -->
+        <div id="screen-bubble" class="screen">
+            <div class="game-header">
+                <button class="btn-icon" onclick="goHome()">←</button>
+                <div class="game-title">🫧 Bubble Shooter <span class="level-badge" id="bs-lvl-badge"></span></div>
+                <div class="stat-pill" id="bs-score">0 pts</div>
+                <button class="btn-icon" onclick="initBubble()">↺</button>
+            </div>
+            <div class="game-area">
+                <canvas id="bs-canvas"></canvas>
+            </div>
+        </div>
+
+
     </div>
 
     <div id="toast"></div>
@@ -140,6 +168,8 @@
     <script src="js/stack-clear.js"></script>
     <script src="js/chain-tiles.js"></script>
     <script src="js/bottle-sort.js"></script>
+    <script src="js/bubble-shooter.js"></script>
+
 </body>
 
 </html>

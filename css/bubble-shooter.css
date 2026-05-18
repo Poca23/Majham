@@ -1,0 +1,7 @@
+#bs-canvas {
+  display: block;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #0d1b2a 0%, #1a3a5c 100%);
+  touch-action: none;
+  cursor: crosshair;
+}
