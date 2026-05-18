@@ -51,9 +51,12 @@
 /* ── STACK & CLEAR ── */
 #sc-columns {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   align-items: flex-end;
   justify-content: center;
+  align-content: flex-end;
+  width: 100%;
 }
 .sc-column {
   display: flex;

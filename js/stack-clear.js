@@ -34,7 +34,11 @@ function renderStack() {
   container.innerHTML = "";
   const cols = scCols.length;
   const maxW = Math.min(window.innerWidth - 32, 480);
-  const sz = Math.min(46, Math.floor((maxW - (cols - 1) * 8) / cols));
+  const maxH = window.innerHeight - 140;
+  const perRow = cols <= 5 ? cols : Math.ceil(cols / 2);
+  const szByW = Math.floor((maxW - (perRow - 1) * 8) / perRow);
+  const szByH = Math.floor((maxH - 8) / (SC_MAX_H + 1));
+  const sz = Math.min(46, szByW, szByH);
 
   scCols.forEach((col, ci) => {
     const el = document.createElement("div");
