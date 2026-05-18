@@ -21,8 +21,8 @@ function initBubble() {
   bsCtx = bsCanvas.getContext("2d");
 
   const area = bsCanvas.parentElement;
-  const W = Math.min(area.clientWidth - 16, 400);
-  const H = Math.min(area.clientHeight - 8, 600);
+  const W = area.clientWidth - 8;
+  const H = area.clientHeight - 8;
   bsCanvas.width = W;
   bsCanvas.height = H;
 

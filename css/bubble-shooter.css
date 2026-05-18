@@ -1,3 +1,12 @@
+#screen-bubble {
+  height: 100vh;
+}
+
+#screen-bubble .game-area {
+  align-items: stretch;
+  padding: 0 4px 4px;
+}
+
 #bs-canvas {
   display: block;
   border-radius: 16px;
