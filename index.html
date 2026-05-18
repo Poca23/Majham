@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Mahjam</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/games.css">
+</head>
+
+<body>
+
+    <div id="splash">
+        <div class="splash-logo">🀄</div>
+        <div class="splash-title">Mahjam</div>
+        <div class="splash-sub">4 jeux · 5 niveaux</div>
+    </div>
+
+    <div id="app">
+
+        <!-- HOME -->
+        <div id="screen-home" class="screen active">
+            <div class="home-header">
+                <h1>Mahjam</h1>
+                <p>Choisissez votre défi</p>
+            </div>
+            <div class="cards-grid">
+
+                <div class="game-card" onclick="pickLevel('tilesmatch')">
+                    <div class="card-top">
+                        <div class="card-emoji">🀄</div>
+                        <div class="card-info">
+                            <h2>Tile Match</h2><span>Le classique</span>
+                        </div>
+                        <div class="card-badge" style="background:#e94560">Classique</div>
+                    </div>
+                    <p class="card-desc">Associez les tuiles identiques libres pour les éliminer. Videz le plateau !</p>
+                </div>
+
+                <div class="game-card" onclick="pickLevel('stack')">
+                    <div class="card-top">
+                        <div class="card-emoji">🎱</div>
+                        <div class="card-info">
+                            <h2>Stack & Clear</h2><span>Les colonnes de boules</span>
+                        </div>
+                        <div class="card-badge" style="background:#9b59b6">Stratégie</div>
+                    </div>
+                    <p class="card-desc">Déplacez les boules entre colonnes pour former des triplets et les éliminer.
+                    </p>
+                </div>
+
+                <div class="game-card" onclick="pickLevel('chain')">
+                    <div class="card-top">
+                        <div class="card-emoji">🃏</div>
+                        <div class="card-info">
+                            <h2>Chain Tiles</h2><span>Le match en chaîne</span>
+                        </div>
+                        <div class="card-badge" style="background:#4a90d9">Connexion</div>
+                    </div>
+                    <p class="card-desc">Reliez des paires identiques avec un chemin à 2 angles max. Videz le plateau !
+                    </p>
+                </div>
+
+                <div class="game-card" onclick="pickLevel('bottle')">
+                    <div class="card-top">
+                        <div class="card-emoji">🧪</div>
+                        <div class="card-info">
+                            <h2>Bottle Sort</h2><span>Le tri de couleurs</span>
+                        </div>
+                        <div class="card-badge" style="background:#00bcd4">Puzzle</div>
+                    </div>
+                    <p class="card-desc">Transvasez les liquides pour regrouper chaque couleur dans une même bouteille !
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TILE MATCH -->
+        <div id="screen-tilesmatch" class="screen">
+            <div class="game-header">
+                <button class="btn-icon" onclick="goHome()">←</button>
+                <div class="game-title">🀄 Tile Match <span class="level-badge" id="tm-lvl-badge"></span></div>
+                <div class="stat-pill" id="tm-score">0 pts</div>
+                <button class="btn-icon" onclick="initTileMatch()">↺</button>
+            </div>
+            <div class="game-area">
+                <div id="tm-board"></div>
+            </div>
+        </div>
+
+        <!-- STACK & CLEAR -->
+        <div id="screen-stack" class="screen">
+            <div class="game-header">
+                <button class="btn-icon" onclick="goHome()">←</button>
+                <div class="game-title">🎱 Stack & Clear <span class="level-badge" id="sc-lvl-badge"></span></div>
+                <div class="stat-pill" id="sc-score">0 pts</div>
+                <button class="btn-icon" onclick="initStack()">↺</button>
+            </div>
+            <div class="game-area">
+                <div id="sc-columns"></div>
+            </div>
+        </div>
+
+        <!-- CHAIN TILES -->
+        <div id="screen-chain" class="screen">
+            <div class="game-header">
+                <button class="btn-icon" onclick="goHome()">←</button>
+                <div class="game-title">🃏 Chain Tiles <span class="level-badge" id="ct-lvl-badge"></span></div>
+                <div class="stat-pill" id="ct-score">0 pts</div>
+                <button class="btn-icon" onclick="initChain()">↺</button>
+            </div>
+            <div class="game-area">
+                <div id="ct-board"></div>
+            </div>
+        </div>
+
+        <!-- BOTTLE SORT -->
+        <div id="screen-bottle" class="screen">
+            <div class="game-header">
+                <button class="btn-icon" onclick="goHome()">←</button>
+                <div class="game-title">🧪 Bottle Sort <span class="level-badge" id="bv-lvl-badge"></span></div>
+                <div class="stat-pill" id="bv-score">0 pts</div>
+                <button class="btn-icon" onclick="initBottle()">↺</button>
+            </div>
+            <div class="game-area">
+                <div id="bv-area"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="toast"></div>
+
+    <script src="js/core.js"></script>
+    <script src="js/tile-match.js"></script>
+    <script src="js/stack-clear.js"></script>
+    <script src="js/chain-tiles.js"></script>
+    <script src="js/bottle-sort.js"></script>
+</body>
+
+</html>
