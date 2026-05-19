@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/games.css">
     <link rel="stylesheet" href="css/bubble-shooter.css">
+    <link rel="stylesheet" href="css/tetris.css">
 
 </head>
 
@@ -89,6 +90,16 @@
                     <p class="card-desc">Visez et tirez pour éclater les groupes de bulles identiques !</p>
                 </div>
 
+                <div class="game-card" onclick="pickLevel('tetris')">
+                    <div class="card-top">
+                        <div class="card-emoji">🟦</div>
+                        <div class="card-info">
+                            <h2>Tetris</h2><span>Le classique des blocs</span>
+                        </div>
+                        <div class="card-badge" style="background:#e67e22">Arcade</div>
+                    </div>
+                    <p class="card-desc">Faites tomber les pièces, complétez des lignes et battez votre record !</p>
+                </div>
 
             </div>
         </div>
@@ -158,6 +169,40 @@
             </div>
         </div>
 
+        <!-- TETRIS -->
+        <div id="screen-tetris" class="screen">
+            <div class="game-header">
+                <button class="btn-icon" onclick="goHome()">←</button>
+                <div class="game-title">🟦 Tetris <span class="level-badge" id="tx-lvl-badge"></span></div>
+                <div class="stat-pill" id="tx-score">0 pts</div>
+                <button class="btn-icon" onclick="initTetris()">↺</button>
+            </div>
+            <div id="tx-layout">
+                <canvas id="tx-canvas"></canvas>
+                <div id="tx-side">
+                    <div class="tx-panel">
+                        <div class="tx-label">Suivant</div>
+                        <canvas id="tx-next" width="80" height="80"></canvas>
+                    </div>
+                    <div class="tx-panel">
+                        <div class="tx-label">Niveau</div>
+                        <div id="tx-level" class="tx-value">1</div>
+                    </div>
+                    <div class="tx-panel">
+                        <div class="tx-label">Lignes</div>
+                        <div id="tx-lines" class="tx-value">0</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contrôles tactiles -->
+            <div id="tx-controls">
+                <button class="tx-btn" id="tx-left">◀</button>
+                <button class="tx-btn" id="tx-rotate">🔄</button>
+                <button class="tx-btn" id="tx-right">▶</button>
+                <button class="tx-btn" id="tx-down">▼</button>
+                <button class="tx-btn" id="tx-drop">⬇</button>
+            </div>
+        </div>
 
     </div>
 
@@ -169,6 +214,7 @@
     <script src="js/chain-tiles.js"></script>
     <script src="js/bottle-sort.js"></script>
     <script src="js/bubble-shooter.js"></script>
+    <script src="js/tetris.js"></script>
 
 </body>
 

@@ -1,0 +1,103 @@
+/* ── LAYOUT ── */
+#tx-layout {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 0;
+  padding: 4px 0;
+}
+
+#tx-canvas {
+  display: block;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  background: #0a0a1a;
+}
+
+/* ── PANNEAU LATÉRAL ── */
+#tx-side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.tx-panel {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 10px 14px;
+  text-align: center;
+  min-width: 80px;
+}
+
+.tx-label {
+  font-size: 0.65rem;
+  color: var(--muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.tx-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+#tx-next {
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+/* ── CONTRÔLES TACTILES ── */
+#tx-controls {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 0 4px;
+  flex-shrink: 0;
+}
+
+.tx-btn {
+  background: var(--card);
+  border: none;
+  color: var(--text);
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.1s,
+    transform 0.1s;
+  touch-action: manipulation;
+}
+
+.tx-btn:active {
+  background: var(--accent);
+  transform: scale(0.92);
+}
+
+/* ── GHOST / PAUSE overlay ── */
+#tx-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+  pointer-events: none;
+}

@@ -16,6 +16,7 @@ const LEVELS = [
     ct: { rows: 4, cols: 4, pairs: 6 },
     bv: { colors: 3, extra: 1 },
     bs: { rows: 5, colors: 3 },
+    tx: { cols: 8, speed: 800 },
   },
   {
     name: "Facile",
@@ -25,6 +26,7 @@ const LEVELS = [
     ct: { rows: 4, cols: 6, pairs: 8 },
     bv: { colors: 4, extra: 1 },
     bs: { rows: 6, colors: 4 },
+    tx: { cols: 9, speed: 650 },
   },
   {
     name: "Moyen",
@@ -34,6 +36,7 @@ const LEVELS = [
     ct: { rows: 6, cols: 6, pairs: 10 },
     bv: { colors: 5, extra: 1 },
     bs: { rows: 7, colors: 5 },
+    tx: { cols: 10, speed: 500 },
   },
   {
     name: "Difficile",
@@ -43,6 +46,7 @@ const LEVELS = [
     ct: { rows: 6, cols: 8, pairs: 14 },
     bv: { colors: 6, extra: 2 },
     bs: { rows: 8, colors: 6 },
+    tx: { cols: 10, speed: 350 },
   },
   {
     name: "Expert",
@@ -52,6 +56,7 @@ const LEVELS = [
     ct: { rows: 8, cols: 8, pairs: 18 },
     bv: { colors: 7, extra: 2 },
     bs: { rows: 9, colors: 7 },
+    tx: { cols: 10, speed: 200 },
   },
 ];
 
@@ -118,6 +123,7 @@ function pickLevel(game) {
     chain: "Chain Tiles",
     bottle: "Bottle Sort",
     bubble: "Bubble Shooter",
+    tetris: "Tetris",
   };
   const box = document.createElement("div");
   box.className = "level-screen";
@@ -152,6 +158,7 @@ function startGame(type) {
     chain: "ct-lvl-badge",
     bottle: "bv-lvl-badge",
     bubble: "bs-lvl-badge",
+    tetris: "tx-lvl-badge",
   };
   const initMap = {
     tilesmatch: initTileMatch,
@@ -159,6 +166,7 @@ function startGame(type) {
     chain: initChain,
     bottle: initBottle,
     bubble: initBubble,
+    tetris: initTetris,
   };
   updateBadge(badgeMap[type], LEVELS[currentLevel]);
   initMap[type]();
