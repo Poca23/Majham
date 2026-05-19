@@ -1,0 +1,105 @@
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*~
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+bower_components/
+
+# Build output
+dist/
+build/
+out/
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+
+# Package manager lock files (optional, keep if you want reproducibility)
+# package-lock.json
+# yarn.lock
+
+# Coverage reports
+coverage/
+*.lcov
+.nyc_output/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+
+# Compiled / minified files (if not committed)
+*.min.js
+*.min.css
+*.map
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Python (if any tooling is used)
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.eggs/
+venv/
+.venv/
+env/
+
+# Sass cache
+.sass-cache/
+*.css.map
+*.sass.map
+
+# Certificates / secrets
+*.pem
+*.key
+*.cert
+*.crt
+
+# Local server config
+.htaccess.local
+nginx.local.conf
