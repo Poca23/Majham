@@ -94,9 +94,8 @@ function _txSetupCanvas() {
   const gap = 10;
   const maxW = layout.clientWidth - sideW - gap - 8;
   const maxH = layout.clientHeight - 8;
-
-  txCellSize = Math.floor(Math.min(maxW / txCols, maxH / txRows));
-
+  txCellSize = Math.floor(Math.min(maxW / txCols, maxH / txRows) * 0.75);
+  txRows = Math.floor(maxH / txCellSize);
   txCanvas.width = txCellSize * txCols;
   txCanvas.height = txCellSize * txRows;
 }
