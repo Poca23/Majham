@@ -1,42 +1,57 @@
-/* ── TILE MATCH ── */
+/* ── TILE MATCH — Mahjong pyramide ── */
+
 #tm-board {
-  display: grid;
-  gap: 4px;
+  position: relative;
+  margin: auto;
 }
 
 .tm-tile {
-  background: rgba(250, 246, 238, 0.24);
-  border: 2px solid #c8bfa8;
-  border-radius: 10px;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  user-select: none;
-  transition:
-    transform 0.15s,
-    border-color 0.15s,
-    box-shadow 0.15s,
-    opacity 0.25s;
-  -webkit-tap-highlight-color: transparent;
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
   font-weight: 700;
   line-height: 1;
-}
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 0.12s,
+    box-shadow 0.12s,
+    opacity 0.2s;
 
-.tm-tile.blocked {
-  opacity: 0.3;
-  cursor: default;
-  pointer-events: none;
-  filter: grayscale(0.4);
-}
-
-.tm-tile.selected {
-  border-color: var(--gold);
+  /* Aspect tuile ivoire */
+  background: linear-gradient(145deg, #f5f0e8, #e8dfc8);
+  border: 1.5px solid #c8b89a;
   box-shadow:
-    0 0 0 3px rgba(245, 166, 35, 0.4),
-    0 4px 12px rgba(0, 0, 0, 0.3);
-  transform: translateY(-3px) scale(1.08);
+    3px 3px 0 #a09070,
+    0 4px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* Tuile libre : couleur vivante, cliquable */
+.tm-tile.tm-free {
+  color: var(--tile-color);
+  cursor: pointer;
+}
+.tm-tile.tm-free:active {
+  transform: scale(0.93);
+}
+
+/* Tuile bloquée : grisée, non cliquable */
+.tm-tile.tm-blocked {
+  opacity: 0.45;
+  filter: grayscale(0.5);
+  cursor: default;
+  color: #999;
+}
+
+/* Tuile sélectionnée */
+.tm-tile.tm-selected {
+  border-color: #f5a623;
+  box-shadow:
+    0 0 0 3px rgba(245, 166, 35, 0.6),
+    3px 3px 0 #a09070,
+    0 6px 16px rgba(0, 0, 0, 0.45);
+  transform: translateY(-4px) scale(1.07);
+  z-index: 999 !important;
 }

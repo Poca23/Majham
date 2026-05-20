@@ -11,7 +11,7 @@ const LEVELS = [
   {
     name: "Débutant",
     color: "#4caf50",
-    tm: { cols: 4, rows: 3 },
+    tm: { layers: 3 },
     sc: { cols: 4, colors: 3, stackH: 4 },
     ct: { rows: 4, cols: 4, pairs: 6 },
     bv: { colors: 3, extra: 1 },
@@ -21,7 +21,7 @@ const LEVELS = [
   {
     name: "Facile",
     color: "#8bc34a",
-    tm: { cols: 4, rows: 4 },
+    tm: { layers: 4 },
     sc: { cols: 5, colors: 4, stackH: 5 },
     ct: { rows: 4, cols: 6, pairs: 8 },
     bv: { colors: 4, extra: 1 },
@@ -31,7 +31,7 @@ const LEVELS = [
   {
     name: "Moyen",
     color: "#ff9800",
-    tm: { cols: 6, rows: 4 },
+    tm: { layers: 5 },
     sc: { cols: 5, colors: 5, stackH: 6 },
     ct: { rows: 6, cols: 6, pairs: 10 },
     bv: { colors: 5, extra: 1 },
@@ -41,7 +41,7 @@ const LEVELS = [
   {
     name: "Difficile",
     color: "#f44336",
-    tm: { cols: 6, rows: 5 },
+    tm: { layers: 6 },
     sc: { cols: 6, colors: 6, stackH: 7 },
     ct: { rows: 6, cols: 8, pairs: 14 },
     bv: { colors: 6, extra: 2 },
@@ -51,7 +51,7 @@ const LEVELS = [
   {
     name: "Expert",
     color: "#9c27b0",
-    tm: { cols: 8, rows: 5 },
+    tm: { layers: 7 },
     sc: { cols: 7, colors: 7, stackH: 8 },
     ct: { rows: 8, cols: 8, pairs: 18 },
     bv: { colors: 7, extra: 2 },
