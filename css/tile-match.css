@@ -1,0 +1,42 @@
+/* ── TILE MATCH ── */
+#tm-board {
+  display: grid;
+  gap: 4px;
+}
+
+.tm-tile {
+  background: rgba(250, 246, 238, 0.24);
+  border: 2px solid #c8bfa8;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    transform 0.15s,
+    border-color 0.15s,
+    box-shadow 0.15s,
+    opacity 0.25s;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tm-tile.blocked {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+  filter: grayscale(0.4);
+}
+
+.tm-tile.selected {
+  border-color: var(--gold);
+  box-shadow:
+    0 0 0 3px rgba(245, 166, 35, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px) scale(1.08);
+}
