@@ -195,10 +195,10 @@ function renderTileMatch() {
   const sz = Math.min(
     Math.floor((maxW - layers * OFFSET) / BASE_COLS),
     Math.floor((maxH - layers * OFFSET) / BASE_ROWS),
-    60,
+    80,
   );
   const gap = 2;
-  const fs = Math.floor(sz * 0.48);
+  const fs = Math.floor(sz * 0.8);
 
   const boardW = BASE_COLS * (sz + gap) + (layers - 1) * OFFSET;
   const boardH = BASE_ROWS * (sz + gap) + (layers - 1) * OFFSET;
