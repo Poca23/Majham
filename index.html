@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="css/games.css">
     <link rel="stylesheet" href="css/bubble-shooter.css">
     <link rel="stylesheet" href="css/tetris.css">
+
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="css/pwa.css">
 </head>
 
 <body>
@@ -215,6 +220,32 @@
     <script src="js/bottle-sort.js"></script>
     <script src="js/bubble-shooter.js"></script>
     <script src="js/tetris.js"></script>
+
+    <!-- Bannière installation Android -->
+    <div id="pwa-banner">
+        <div class="pwa-icon">🀄</div>
+        <div class="pwa-text">
+            <strong>Installer Mahjam</strong>
+            <span>Jouez hors-ligne, sans navigateur</span>
+        </div>
+        <button id="pwa-install">Installer</button>
+        <button id="pwa-dismiss">✕</button>
+    </div>
+
+    <!-- Hint iOS -->
+    <div id="ios-hint">
+        <p>
+            Pour installer Mahjam sur iOS :<br>
+            Appuyez sur <strong>⎋ Partager</strong>
+            puis <strong>« Sur l'écran d'accueil »</strong>
+        </p>
+        <button>Fermer</button>
+    </div>
+
+    <!-- Barre offline -->
+    <div id="offline-bar">📵 Hors-ligne — données sauvegardées</div>
+
+    <script src="js/pwa.js"></script>
 
 </body>
 

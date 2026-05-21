@@ -1,0 +1,45 @@
+const CACHE = "mahjam-v1";
+const ASSETS = [
+  "/",
+  "/index.html",
+  "/manifest.json",
+  "/css/base.css",
+  "/css/layout.css",
+  "/css/components.css",
+  "/css/games.css",
+  "/css/tile-match.css",
+  "/css/chain-tiles.css",
+  "/css/bubble-shooter.css",
+  "/css/tetris.css",
+  "/js/core.js",
+  "/js/tile-match.js",
+  "/js/stack-clear.js",
+  "/js/chain-tiles.js",
+  "/js/bottle-sort.js",
+  "/js/bubble-shooter.js",
+  "/js/tetris.js",
+  "/icons/icon-192.png",
+  "/icons/icon-512.png",
+];
+
+self.addEventListener("install", (e) => {
+  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS)));
+  self.skipWaiting();
+});
+
+self.addEventListener("activate", (e) => {
+  e.waitUntil(
+    caches
+      .keys()
+      .then((keys) =>
+        Promise.all(
+          keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)),
+        ),
+      ),
+  );
+  self.clients.claim();
+});
+
+self.addEventListener("fetch", (e) => {
+  e.respondWith(caches.match(e.request).then((r) => r || fetch(e.request)));
+});
