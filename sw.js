@@ -1,4 +1,4 @@
-const CACHE = "mahjam-v6";
+const CACHE = "mahjam-v7";
 const ASSETS = [
   "/",
   "/index.html",
