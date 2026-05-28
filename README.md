@@ -1,6 +1,7 @@
 # 🀄 Mahjam — 6 Mini-Jeux Mobile
 
-**Mahjam** est une application web mobile proposant 6 mini-jeux de puzzle et d'arcade, jouables directement dans le navigateur, sans installation.
+**Mahjam** est une application web mobile proposant 6 mini-jeux de puzzle et d'arcade,
+jouables directement dans le navigateur, sans installation.
 
 ---
 
@@ -10,7 +11,9 @@
 
 > Le classique des jeux de tuiles.
 
-Associez les tuiles identiques **libres** (non bloquées des deux côtés) pour les éliminer. Videz l'intégralité du plateau pour gagner ! Le plateau est généré de manière **garantie solvable** grâce à un algorithme de simulation inverse.
+Associez les tuiles identiques **libres** (non bloquées des deux côtés) pour les éliminer.
+Videz l'intégralité du plateau pour gagner ! Le plateau est généré de manière
+**garantie solvable** grâce à un algorithme de simulation inverse.
 
 ---
 
@@ -18,7 +21,9 @@ Associez les tuiles identiques **libres** (non bloquées des deux côtés) pour 
 
 > Les colonnes de boules.
 
-Déplacez les boules entre les colonnes pour former des **triplets** de même couleur en sommet de colonne. Chaque triplet est automatiquement éliminé. Videz toutes les colonnes pour remporter la victoire !
+Déplacez les boules entre les colonnes pour former des **triplets** de même couleur en
+sommet de colonne. Chaque triplet est automatiquement éliminé. Videz toutes les colonnes
+pour remporter la victoire !
 
 ---
 
@@ -26,7 +31,9 @@ Déplacez les boules entre les colonnes pour former des **triplets** de même co
 
 > Le match en chaîne.
 
-Reliez deux tuiles identiques à l'aide d'un chemin comportant **au maximum 2 angles**. Éliminez toutes les paires pour terminer le niveau. Un système de détection de deadlock vous prévient si aucun chemin n'est disponible.
+Reliez deux tuiles identiques à l'aide d'un chemin comportant **au maximum 2 angles**.
+Éliminez toutes les paires pour terminer le niveau. Un système de détection de deadlock
+vous prévient si aucun chemin n'est disponible.
 
 ---
 
@@ -34,7 +41,9 @@ Reliez deux tuiles identiques à l'aide d'un chemin comportant **au maximum 2 an
 
 > Le tri de liquides colorés.
 
-Transvasez les liquides entre les bouteilles pour regrouper chaque couleur dans **une seule et même bouteille**. Attention à la capacité maximale (4 doses par bouteille) ! Les bouteilles sont rendues en **SVG dynamique**.
+Transvasez les liquides entre les bouteilles pour regrouper chaque couleur dans
+**une seule et même bouteille**. Attention à la capacité maximale (4 doses par bouteille) !
+Les bouteilles sont rendues en **SVG dynamique**.
 
 ---
 
@@ -42,7 +51,9 @@ Transvasez les liquides entre les bouteilles pour regrouper chaque couleur dans 
 
 > L'arcade classique revisitée.
 
-Visez et tirez des bulles colorées pour former des groupes d'au moins **3 bulles identiques** et les faire éclater. Les bulles non connectées au plafond tombent également. La partie se termine si les bulles atteignent le lanceur. Rendu en **Canvas 2D** avec grille hexagonale.
+Visez et tirez des bulles colorées pour former des groupes d'au moins **3 bulles identiques**
+et les faire éclater. Les bulles non connectées au plafond tombent également. La partie se
+termine si les bulles atteignent le lanceur. Rendu en **Canvas 2D** avec grille hexagonale.
 
 ---
 
@@ -50,7 +61,9 @@ Visez et tirez des bulles colorées pour former des groupes d'au moins **3 bulle
 
 > Le classique des blocs.
 
-Faites tomber les pièces, complétez des lignes et battez votre record ! Comprend un système de **ghost piece** (projection), de **wall kick** pour les rotations, d'accélération progressive, et de **hard drop**. Contrôles clavier et tactiles disponibles.
+Faites tomber les pièces, complétez des lignes et battez votre record ! Comprend un système
+de **ghost piece** (projection), de **wall kick** pour les rotations, d'accélération
+progressive, et de **hard drop**. Contrôles clavier et tactiles disponibles.
 
 ---
 
@@ -73,6 +86,11 @@ Chaque jeu propose **5 niveaux** sélectionnables avant de lancer une partie :
 ```
 mahjam/
 ├── index.html               # Point d'entrée principal
+├── manifest.json            # Manifeste PWA
+├── sw.js                    # Service Worker (cache offline)
+├── assets/
+│   ├── icons/               # Icônes PWA (192×192, 512×512)
+│   └── logo/                # Logos et visuels du projet
 ├── css/
 │   ├── base.css             # Variables globales, resets, animations
 │   ├── layout.css           # Structure des écrans et headers
@@ -81,7 +99,8 @@ mahjam/
 │   ├── tile-match.css       # Styles Tile Match (pyramide mahjong)
 │   ├── chain-tiles.css      # Styles Chain Tiles + animation SVG chemin
 │   ├── bubble-shooter.css   # Styles du canvas Bubble Shooter
-│   └── tetris.css           # Styles Tetris (canvas + contrôles tactiles)
+│   ├── tetris.css           # Styles Tetris (canvas + contrôles tactiles)
+│   └── pwa.css              # Styles bannière install, hint iOS, offline bar
 └── js/
     ├── core.js              # Navigation, niveaux, utilitaires partagés
     ├── tile-match.js        # Logique Tile Match (génération solvable)
@@ -89,7 +108,8 @@ mahjam/
     ├── chain-tiles.js       # Logique Chain Tiles (BFS chemin 2 angles)
     ├── bottle-sort.js       # Logique Bottle Sort (SVG dynamique)
     ├── bubble-shooter.js    # Logique Bubble Shooter (Canvas 2D, hex)
-    └── tetris.js            # Logique Tetris (ghost, wall kick, drop)
+    ├── tetris.js            # Logique Tetris (ghost, wall kick, drop)
+    └── pwa.js               # Gestion PWA (install prompt, iOS hint, offline)
 ```
 
 ---
@@ -99,9 +119,25 @@ mahjam/
 - **HTML5 / CSS3 / JavaScript Vanilla** — aucun framework
 - **Canvas API** — rendu du Bubble Shooter et du Tetris
 - **SVG dynamique** — rendu des bouteilles (Bottle Sort) et des chemins (Chain Tiles)
+- **Service Worker** — mise en cache et support hors-ligne
+- **Web App Manifest** — installation en tant que PWA
 - **Responsive design** — adapté aux mobiles et tablettes
 - **Touch events** — support tactile natif (Tetris, Bubble Shooter)
 - **Algorithme de solvabilité** — génération garantie pour Tile Match
+
+---
+
+## 📲 Installation (PWA)
+
+Mahjam est installable en tant qu'application native sur mobile et desktop :
+
+| Plateforme       | Méthode                                         |
+| ---------------- | ----------------------------------------------- |
+| Android / Chrome | Bannière automatique → bouton **« Installer »** |
+| iOS / Safari     | Menu Partager ⎋ → **« Sur l'écran d'accueil »** |
+| Desktop / Chrome | Icône d'installation dans la barre d'adresse    |
+
+Une fois installée, l'application fonctionne **entièrement hors-ligne** grâce au Service Worker.
 
 ---
 
@@ -113,13 +149,16 @@ Aucune installation requise. Il suffit d'ouvrir `index.html` dans un navigateur 
 # Option 1 : ouverture directe
 open index.html
 
-# Option 2 : serveur local (recommandé)
+# Option 2 : serveur local (recommandé pour la PWA)
 npx serve .
 # ou
 python -m http.server 8080
 ```
 
 Puis accédez à `http://localhost:8080` dans votre navigateur.
+
+> ⚠️ Le Service Worker et le manifeste PWA nécessitent un serveur HTTP
+> (même local). L'ouverture directe via `file://` ne les active pas.
 
 ---
 
@@ -136,7 +175,8 @@ Puis accédez à `http://localhost:8080` dans votre navigateur.
 
 ## 📊 Système de score
 
-Le score est calculé dynamiquement en fonction du **niveau choisi** (multiplicateur `currentLevel + 1`) :
+Le score est calculé dynamiquement en fonction du **niveau choisi**
+(multiplicateur `currentLevel + 1`) :
 
 | Action                      | Points de base                                |
 | --------------------------- | --------------------------------------------- |
@@ -167,4 +207,5 @@ Le score est calculé dynamiquement en fonction du **niveau choisi** (multiplica
 
 ## 🙌 Crédits
 
-Projet développé en HTML/CSS/JS pur. Conçu pour être léger, rapide et agréable sur mobile.
+Projet développé en HTML/CSS/JS pur, sans dépendance externe.
+Conçu pour être léger, rapide et agréable sur mobile.
