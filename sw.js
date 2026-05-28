@@ -1,4 +1,4 @@
-const CACHE = "mahjam-v1";
+const CACHE = "mahjam-v4";
 const ASSETS = [
   "/",
   "/index.html",
@@ -11,6 +11,7 @@ const ASSETS = [
   "/css/chain-tiles.css",
   "/css/bubble-shooter.css",
   "/css/tetris.css",
+  "/css/pwa.css",
   "/js/core.js",
   "/js/tile-match.js",
   "/js/stack-clear.js",
@@ -18,8 +19,11 @@ const ASSETS = [
   "/js/bottle-sort.js",
   "/js/bubble-shooter.js",
   "/js/tetris.js",
-  "/icons/icon-192.png",
-  "/icons/icon-512.png",
+  "/js/pwa.js",
+  "/assets/icons/icon-192.png",
+  "/assets/icons/icon-512.png",
+  "/assets/logo/logo-remove-bg.png",
+  "/assets/logo/favicon-remove-bg.png",
 ];
 
 self.addEventListener("install", (e) => {
