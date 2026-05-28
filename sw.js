@@ -1,4 +1,4 @@
-const CACHE = "mahjam-v4";
+const CACHE = "mahjam-v6";
 const ASSETS = [
   "/",
   "/index.html",
@@ -22,13 +22,10 @@ const ASSETS = [
   "/js/pwa.js",
   "/assets/icons/icon-192.png",
   "/assets/icons/icon-512.png",
-  "/assets/logo/logo-remove-bg.png",
-  "/assets/logo/favicon-remove-bg.png",
 ];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS)));
-  self.skipWaiting();
 });
 
 self.addEventListener("activate", (e) => {
@@ -41,7 +38,6 @@ self.addEventListener("activate", (e) => {
         ),
       ),
   );
-  self.clients.claim();
 });
 
 self.addEventListener("fetch", (e) => {
