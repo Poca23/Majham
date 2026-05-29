@@ -1,7 +1,9 @@
-# 🀄 Mahjam — 6 Mini-Jeux Mobile
+# 🀄 Mahjam — Mini-Jeux Mobile
 
-**Mahjam** est une application web mobile proposant 6 mini-jeux de puzzle et d'arcade,
+**Mahjam** est une application web mobile proposant des mini-jeux de puzzle et d'arcade,
 jouables directement dans le navigateur, sans installation.
+
+> Développé par **Claire Naudin** — [CND - Web is yours](https://portfolio-cnd.netlify.app/)
 
 ---
 
@@ -84,32 +86,34 @@ Chaque jeu propose **5 niveaux** sélectionnables avant de lancer une partie :
 ## 🗂️ Structure du projet
 
 ```
+
 mahjam/
-├── index.html               # Point d'entrée principal
-├── manifest.json            # Manifeste PWA
-├── sw.js                    # Service Worker (cache offline)
+├── index.html # Point d'entrée principal
+├── manifest.json # Manifeste PWA
+├── sw.js # Service Worker (cache offline)
 ├── assets/
-│   ├── icons/               # Icônes PWA (192×192, 512×512)
-│   └── logo/                # Logos et visuels du projet
+│ ├── icons/ # Icônes PWA (192×192, 512×512)
+│ └── logo/ # Logos et visuels du projet
 ├── css/
-│   ├── base.css             # Variables globales, resets, animations
-│   ├── layout.css           # Structure des écrans et headers
-│   ├── components.css       # Boutons, cartes, overlays, toasts
-│   ├── games.css            # Styles spécifiques aux jeux (Stack, Bottle)
-│   ├── tile-match.css       # Styles Tile Match (pyramide mahjong)
-│   ├── chain-tiles.css      # Styles Chain Tiles + animation SVG chemin
-│   ├── bubble-shooter.css   # Styles du canvas Bubble Shooter
-│   ├── tetris.css           # Styles Tetris (canvas + contrôles tactiles)
-│   └── pwa.css              # Styles bannière install, hint iOS, offline bar
+│ ├── base.css # Variables globales, resets, animations
+│ ├── layout.css # Structure des écrans et headers
+│ ├── components.css # Boutons, cartes, overlays, toasts
+│ ├── games.css # Styles spécifiques aux jeux (Stack, Bottle)
+│ ├── tile-match.css # Styles Tile Match (pyramide mahjong)
+│ ├── chain-tiles.css # Styles Chain Tiles + animation SVG chemin
+│ ├── bubble-shooter.css # Styles du canvas Bubble Shooter
+│ ├── tetris.css # Styles Tetris (canvas + contrôles tactiles)
+│ └── pwa.css # Styles bannière install, hint iOS, offline bar
 └── js/
-    ├── core.js              # Navigation, niveaux, utilitaires partagés
-    ├── tile-match.js        # Logique Tile Match (génération solvable)
-    ├── stack-clear.js       # Logique Stack & Clear
-    ├── chain-tiles.js       # Logique Chain Tiles (BFS chemin 2 angles)
-    ├── bottle-sort.js       # Logique Bottle Sort (SVG dynamique)
-    ├── bubble-shooter.js    # Logique Bubble Shooter (Canvas 2D, hex)
-    ├── tetris.js            # Logique Tetris (ghost, wall kick, drop)
-    └── pwa.js               # Gestion PWA (install prompt, iOS hint, offline)
+├── core.js # Navigation, niveaux, utilitaires partagés
+├── tile-match.js # Logique Tile Match (génération solvable)
+├── stack-clear.js # Logique Stack & Clear
+├── chain-tiles.js # Logique Chain Tiles (BFS chemin 2 angles)
+├── bottle-sort.js # Logique Bottle Sort (SVG dynamique)
+├── bubble-shooter.js # Logique Bubble Shooter (Canvas 2D, hex)
+├── tetris.js # Logique Tetris (ghost, wall kick, drop)
+└── pwa.js # Gestion PWA (install prompt, iOS hint, offline)
+
 ```
 
 ---
@@ -207,5 +211,9 @@ Le score est calculé dynamiquement en fonction du **niveau choisi**
 
 ## 🙌 Crédits
 
-Projet développé en HTML/CSS/JS pur, sans dépendance externe.
+Développé avec ❤️ en HTML / CSS / JS pur, sans dépendance externe.
 Conçu pour être léger, rapide et agréable sur mobile.
+
+**Claire Naudin** — Développeuse FullStack
+🏢 [CND - Web is yours](https://portfolio-cnd.netlify.app/)
+📅 Mai 2026
